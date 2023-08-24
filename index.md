@@ -6,6 +6,7 @@ hero:
   name: "RecruiTHOR"
   text: "The recruitment process of the future."
   tagline: My great project tagline
+  image: /illustration3.png
   actions:
     - theme: brand
       text: Markdown Examples
