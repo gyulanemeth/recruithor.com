@@ -32,6 +32,9 @@ An exciting, fun, challenging, and unusual recruitment process, that you will en
 Get access to all of our partner companies.
 - if you go through the process, it gives you access to a all of our partners, you don't need to do tons of similar and boring tests anymore.
 
+Not a fucking boring recruitment process. It's challenging and fun.
+ - ...
+
 
 
 companies section
