@@ -3095,3 +3095,11 @@ TAG
 .hover-secondary a:hover {
   color: var(--color-secondary);
 }
+
+.primary-colored-text {
+  color: var(--color-primary);
+}
+
+.secondary-colored-text {
+  color: var(--color-secondary);
+}
