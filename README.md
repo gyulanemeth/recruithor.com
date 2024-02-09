@@ -45,7 +45,7 @@ testimonials section
 
 signup section
  - name
- - eamail
+ - email
  - with an svg-captcha
 
 footer
