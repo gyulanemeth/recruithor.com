@@ -1570,6 +1570,11 @@ TAG
 	width : var(--vspace-1);
 }
 
+.social-list img {
+	height: var(--vspace-1);
+	width : var(--vspace-1);
+}
+
 .social-list svg path,
 .social-list svg circle {
 	fill      : rgba(255, 255, 255, 0.5);
@@ -1868,7 +1873,6 @@ TAG
 .nav-header__logo {
 	z-index    : 3;
 	line-height: 1;
-	transform  : translate(0.3rem, -0.2em);
 }
 
 .nav-header__logo a {
@@ -1877,6 +1881,8 @@ TAG
 	padding: 0;
 	outline: 0;
 	border : none;
+  display: flex;
+  align-items: center;
 }
 
 .nav-header__logo img {
@@ -2387,8 +2393,18 @@ TAG
 	height         : var(--vspace-1_5);
 	width          : var(--vspace-1_5);
 	border-radius  : 50%;
-	border         : 1px solid var(--color-secondary);
+	border         : 1px solid var(--color-white);
 	margin-right   : var(--vspace-0_5);
+}
+
+.section-intro__scroll-down .scroll-icon:hover {
+  transition: all 0.5s ease-in-out;
+	border         : 1px solid var(--color-secondary);
+}
+
+.section-intro__scroll-down .scroll-icon-primary:hover {
+  transition: all 0.5s ease-in-out;
+	border         : 1px solid var(--color-primary);
 }
 
 .section-intro__scroll-down svg {
@@ -2965,16 +2981,16 @@ TAG
 	border: 1px solid var(--color-primary);
 }
 
-.ss-go-top a:focus svg,
-.ss-go-top a:hover svg {
-	stroke: var(--color-primary);
+.ss-go-top-secondary a:focus,
+.ss-go-top-secondary a:hover {
+	border: 1px solid var(--color-secondary);
 }
 
 .ss-go-top svg {
 	height    : var(--vspace-0_875);
 	width     : var(--vspace-0_875);
 	stroke    : var(--color-2);
-	transition: all 0.3s ease-in-out;
+	transition: all 0.5s ease-in-out;
 }
 
 /* ------------------------------------------------------------------- 
@@ -3096,10 +3112,10 @@ TAG
   color: var(--color-secondary);
 }
 
-.primary-colored-text {
+.primary-colored-text, .primary-colored-text a {
   color: var(--color-primary);
 }
 
-.secondary-colored-text {
+.secondary-colored-text, .secondary-colored-text a {
   color: var(--color-secondary);
 }
