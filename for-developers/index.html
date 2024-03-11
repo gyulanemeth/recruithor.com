@@ -17,12 +17,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+
+    <style>
+      #not-a-robot {
+        display: none;
+      }
+    </style>
   </head>
 
   <body id="top">
     <!-- preloader -->
     <div id="preloader">
-      <div id="loader" class="dots-fade">
+      <div id="loader" class="loader dots-fade">
         <div></div>
         <div></div>
         <div></div>
@@ -320,28 +326,35 @@
                   Stop waste your energy on boring companies. Go through our exciting selection process and let us find interesting companies for you.
                 </p>
 
-                <p class="lead"><span class="primary-colored-text">!!!Signup is not active yet!!!</span></p>
-                <p class="lead"><span class="primary-colored-text">Signup starts on the March 1st, 2024.</span></p>
-
                 <form>
                   <div>
-                    <input class="u-fullwidth" type="text" placeholder="Your Name" id="name" />
+                    <input id="name-input" class="u-fullwidth" type="text" placeholder="Your Name" />
+                    <div class="error-message">Please provide a valid name!</div>
                   </div>
                   <div>
-                    <input
-                      class="u-fullwidth"
-                      type="email"
-                      placeholder="test@mailbox.com"
-                      id="email"
-                    />
+                    <input id="email-input" class="u-fullwidth" type="email" placeholder="test@mailbox.com" />
+                    <div class="error-message">Please provide a valid email address!</div>
                   </div>
 
-                  <input
-                    class="btn--primary text-bold"
-                    type="submit"
-                    value="Send"
-                    style="width: 50%"
-                  />
+                  <button id="signup-button" class="btn--primary text-bold" style="width: 50%">Sign up</button>
+
+                  <div id="not-a-robot">
+                    <hr/>
+                    <p class="attention-getter">
+                      Prove that you are not a robot! (Or a very advanced one!)
+                    </p>
+                    <div id="captcha-wrapper" style="margin-bottom: var(--vspace-1);">
+                      <div class="loader dots-fade">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </div>
+
+                    <input id="captcha-input" class="u-fullwidth" type="text" placeholder="Enter captcha" />
+                    <div id="captcha-error" class="error-message" style="display: none;">Sorry, we don't accept applications from robots (yet)!</div>
+                  </div>
+                  <button id="signup-button-for-real" class="btn--primary text-bold" style="width: 50%; display: none;">I'm not a robot! Promise!</button>
                 </form>
               </div>
             </div>
@@ -419,7 +432,66 @@
         </div>
       </footer>
     </div>
-    <script src="/js/plugins.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/config.js"></script>
+
+    <script>
+      function isValidName(name) {
+        return name.length > 0
+      }
+
+      function isValidEmail(email) {
+        return email.length > 0 && email.includes('@') && email.includes('.')
+      }
+
+      document.getElementById('email-input').addEventListener('focus', () => {
+        document.getElementById('email-input').classList.remove('error')
+      })
+
+      document.getElementById('name-input').addEventListener('focus', () => {
+        document.getElementById('name-input').classList.remove('error')
+      })
+
+
+
+      document.getElementById('email-input').addEventListener('blur', () => {
+        if (!isValidEmail(document.getElementById('email-input').value)) {
+          document.getElementById('email-input').classList.add('error')
+        }
+      })
+
+      document.getElementById('name-input').addEventListener('blur', () => {
+        if (!isValidName(document.getElementById('name-input').value)) {
+          document.getElementById('name-input').classList.add('error')
+        }
+      })
+
+      document.getElementById('signup-button').addEventListener('click', async () => {
+        if (!isValidName(document.getElementById('name-input').value)) {
+          document.getElementById('name-input').classList.add('error')
+          return
+        }
+
+        if (!isValidEmail(document.getElementById('email-input').value)) {
+          document.getElementById('email-input').classList.add('error')
+          return
+        }
+
+        document.getElementById('name-input').style.display = 'none'
+        document.getElementById('email-input').style.display = 'none'
+        document.getElementById('signup-button').style.display = 'none'
+
+        document.getElementById('not-a-robot').style.display = 'block'
+
+        // load captcha
+        const response = await fetch(`${window.config.apiUrl}/v1/applicants/sign-up/captcha`)
+        const data = await response.json()
+        document.getElementById('captcha-wrapper').innerHTML = data.result.data
+        document.getElementById('captcha-wrapper').style.background = '#ffffff'
+
+        document.getElementById('signup-button-for-real').style.display = 'inline-block'
+
+      })
+    </script>
   </body>
 </html>
