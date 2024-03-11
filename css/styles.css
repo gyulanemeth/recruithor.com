@@ -776,6 +776,7 @@ GRID
 html {
 	font-size : var(--base-size);
 	box-sizing: border-box;
+	scroll-behavior: smooth;
 }
 
 *,
