@@ -336,12 +336,12 @@
                     <div class="error-message">Please provide a valid email address!</div>
                   </div>
 
-                  <button id="signup-button" class="btn--primary text-bold" style="width: 50%">Sign up</button>
+                  <button id="signup-button" type="button" class="btn--primary text-bold" style="width: 50%">Sign up</button>
 
                   <div id="not-a-robot">
                     <hr/>
                     <p class="attention-getter">
-                      Prove that you are not a robot! (Or a very advanced one!)
+                      Prove that you are not a robot! Type in what's in the box below:
                     </p>
                     <div id="captcha-wrapper" style="margin-bottom: var(--vspace-1);">
                       <div class="loader dots-fade">
@@ -350,11 +350,10 @@
                         <div></div>
                       </div>
                     </div>
-
                     <input id="captcha-input" class="u-fullwidth" type="text" placeholder="Enter captcha" />
                     <div id="captcha-error" class="error-message" style="display: none;">Sorry, we don't accept applications from robots (yet)!</div>
                   </div>
-                  <button id="signup-button-for-real" class="btn--primary text-bold" style="width: 50%; display: none;">I'm not a robot! Promise!</button>
+                  <button id="signup-button-for-real" type="button" class="btn--primary text-bold" style="width: 50%; display: none;">I'm not a robot! Promise!</button>
                 </form>
               </div>
             </div>
@@ -484,13 +483,50 @@
         document.getElementById('not-a-robot').style.display = 'block'
 
         // load captcha
-        const response = await fetch(`${window.config.apiUrl}/v1/applicants/sign-up/captcha`)
+        let response
+        try {
+          response = await fetch(`${window.config.apiUrl}/v1/applicants/sign-up/captcha`)
+        } catch (e) {
+          console.error(e)
+        }
+
         const data = await response.json()
+        const probe = data.result.probe
         document.getElementById('captcha-wrapper').innerHTML = data.result.data
         document.getElementById('captcha-wrapper').style.background = '#ffffff'
 
         document.getElementById('signup-button-for-real').style.display = 'inline-block'
 
+        document.getElementById('signup-button-for-real').addEventListener('click', async () => {
+          const name = document.getElementById('name-input').value
+          const email = document.getElementById('email-input').value
+          const captchaText = document.getElementById('captcha-input').value
+
+          const response = await fetch(`${window.config.apiUrl}/v1/applicants/sign-up`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              captcha: {
+                text: captchaText,
+                probe
+              }
+            })
+          })
+
+          if (response.status === 201) {
+            alert('Thank you for signing up! We will get in touch with you soon!')
+          } else if (response.status === 403) {
+            alert('Sorry, something went wrong. Please try again later.')
+          } else if (response.status === 409) {
+            alert('Sorry, you have already signed up. We will get in touch with you soon!')
+          } else {
+            alert('Sorry, something went wrong. Please try again later.')
+          }
+        })
       })
     </script>
   </body>

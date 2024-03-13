@@ -1,3 +1,3 @@
 window.config = {
-    apiUrl: 'http://localhost:3100'
+    apiUrl: 'http://127.0.0.1:3100'
 }
