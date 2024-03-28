@@ -17,12 +17,18 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+
+    <style>
+      #not-a-robot {
+        display: none;
+      }
+    </style>
   </head>
 
   <body id="top">
     <!-- preloader -->
     <div id="preloader">
-      <div id="loader" class="dots-fade">
+      <div id="loader" class="loader dots-fade">
         <div></div>
         <div></div>
         <div></div>
@@ -108,22 +114,47 @@
             <div class="column grid-block grid-section-split">
               <div class="section-header grid-section-split__header">
                 <div class="text-tag">How it woks</div>
-                <h2 class="text-display-title">We continuously search for companies using your favorite technologies.</h2>
-              </div>
-
-              <div class="section-about__content-main grid-section-split__primary">
+                <h2 class="text-display-title">We continuously search for companies using your favorite tech.</h2>
                 <p class="attention-getter">
                   In order to confidently offer you to our partner companies, we will need to test your <span class="primary-colored-text">problem-solving skills</span>, your <span class="primary-colored-text">technical knowledge</span>, and last but not least, your <span class="primary-colored-text">algorithmic thinking</span>.
                   We test these things in a highly unusual process, that starts with a brain-teaser, and you will love.
                 </p>
                 <p class="attention-getter">
-                  Currently, we only test for the following frontend technologies: <span class="primary-colored-text">Javascript</span>, <span class="primary-colored-text">Vue.js</span> & <span class="primary-colored-text">React.js</span>. We will very soon extend this list with the coolest frameworks, and other programming languages.
+                  Currently, we only hire <span class="primary-colored-text">beginner</span>, <span class="primary-colored-text">junior</span>, and <span class="primary-colored-text">medior</span> web developers who work <span class="primary-colored-text">remotely</span> for our partner companies.
                 </p>
                 <p class="attention-getter">
-                  If you are a senior developer, then this process is not for you, because our testing process is optimized to test <span class="primary-colored-text">beginner</span>, <span class="primary-colored-text">junior</span> and <span class="primary-colored-text">medior</span> developers.
+                  We <span class="primary-colored-text">do not</span> test for specific tech stacks at the moment.
+                  We believe that a good developer can learn any tech stack in a reasonable amount of time.
                 </p>
+              </div>
+
+              <div class="section-about__content-main grid-section-split__primary">
                 <p class="attention-getter">
-                  We only hire people who are willing to (or want to) work <span class="primary-colored-text">remotely</span>. Let us know your preferred time-zones, so we can pair you up with the proper companies.
+                  <ol>
+                    <li>
+                      <p class="attention-getter primary-colored-text">1. Problem solving test</p>
+                      <p class="attention-getter">
+                        This is a go/no-go deep-water test. Candidates have to figure out a brain-teaser with almost no input from our side.
+                        If a candidate passes this test, it means they are generally a good problem solver, and they can figure out things on their own.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="attention-getter primary-colored-text">2. Javascript programming quiz</p>
+                      <p class="attention-getter">
+                        In web development, Javascript is unavoidable, so we want to make sure candidates have a good understanding of the language.
+                      </p>
+                    </li>
+                    <li>
+                      <p class="attention-getter primary-colored-text">3. Algorithmic thinking interview</p>
+                      <p class="attention-getter">
+                        Everybody want to hire developers who can think. Algorithmic skills are a good indicator of this, probably the best one. That is why we test this very thoroughly in a live interview, where candidates have to solve problems on the fly.
+                        If someone passes this test, it means they can think through relatively complex things, and they can do it under pressure.
+                      </p>
+                      <p class="attention-getter">
+                        This test is also a great way to test our candidates' <span class="primary-colored-text">communication skills</span>, as they have to explain their thought process.
+                      </p>
+                    </li>
+                  </ol>
                 </p>
               </div>
             </div>
@@ -320,29 +351,43 @@
                   Stop waste your energy on boring companies. Go through our exciting selection process and let us find interesting companies for you.
                 </p>
 
-                <p class="lead"><span class="primary-colored-text">!!!Signup is not active yet!!!</span></p>
-                <p class="lead"><span class="primary-colored-text">Signup starts on the March 1st, 2024.</span></p>
+                <p>If you are interested finding a job with us, please write us a few line about "Why you love-hate Javascript", and we will get in touch with you soon!</p>
 
+                <a class="btn btn--primary text-bold" href="mailto:info@recruithor.com?subject=Why%20I%20love-hate%20Javascript.">Count me in!</a>
+
+
+
+                <!--
                 <form>
                   <div>
-                    <input class="u-fullwidth" type="text" placeholder="Your Name" id="name" />
+                    <input id="name-input" class="u-fullwidth" type="text" placeholder="Your Name" />
+                    <div class="error-message">Please provide a valid name!</div>
                   </div>
                   <div>
-                    <input
-                      class="u-fullwidth"
-                      type="email"
-                      placeholder="test@mailbox.com"
-                      id="email"
-                    />
+                    <input id="email-input" class="u-fullwidth" type="email" placeholder="test@mailbox.com" />
+                    <div class="error-message">Please provide a valid email address!</div>
                   </div>
 
-                  <input
-                    class="btn--primary text-bold"
-                    type="submit"
-                    value="Send"
-                    style="width: 50%"
-                  />
+                  <button id="signup-button" type="button" class="btn--primary text-bold" style="width: 50%">Sign up</button>
+
+                  <div id="not-a-robot">
+                    <hr/>
+                    <p class="attention-getter">
+                      Prove that you are not a robot! Type in what's in the box below:
+                    </p>
+                    <div id="captcha-wrapper" style="margin-bottom: var(--vspace-1);">
+                      <div class="loader dots-fade">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                      </div>
+                    </div>
+                    <input id="captcha-input" class="u-fullwidth" type="text" placeholder="Enter captcha" />
+                    <div id="captcha-error" class="error-message" style="display: none;">Sorry, we don't accept applications from robots (yet)!</div>
+                  </div>
+                  <button id="signup-button-for-real" type="button" class="btn--primary text-bold" style="width: 50%; display: none;">I'm not a robot! Promise!</button>
                 </form>
+                -->
               </div>
             </div>
           </div>
@@ -419,7 +464,103 @@
         </div>
       </footer>
     </div>
-    <script src="/js/plugins.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/config.js"></script>
+
+    <script>
+      function isValidName(name) {
+        return name.length > 0
+      }
+
+      function isValidEmail(email) {
+        return email.length > 0 && email.includes('@') && email.includes('.')
+      }
+
+      document.getElementById('email-input').addEventListener('focus', () => {
+        document.getElementById('email-input').classList.remove('error')
+      })
+
+      document.getElementById('name-input').addEventListener('focus', () => {
+        document.getElementById('name-input').classList.remove('error')
+      })
+
+
+
+      document.getElementById('email-input').addEventListener('blur', () => {
+        if (!isValidEmail(document.getElementById('email-input').value)) {
+          document.getElementById('email-input').classList.add('error')
+        }
+      })
+
+      document.getElementById('name-input').addEventListener('blur', () => {
+        if (!isValidName(document.getElementById('name-input').value)) {
+          document.getElementById('name-input').classList.add('error')
+        }
+      })
+
+      document.getElementById('signup-button').addEventListener('click', async () => {
+        if (!isValidName(document.getElementById('name-input').value)) {
+          document.getElementById('name-input').classList.add('error')
+          return
+        }
+
+        if (!isValidEmail(document.getElementById('email-input').value)) {
+          document.getElementById('email-input').classList.add('error')
+          return
+        }
+
+        document.getElementById('name-input').style.display = 'none'
+        document.getElementById('email-input').style.display = 'none'
+        document.getElementById('signup-button').style.display = 'none'
+
+        document.getElementById('not-a-robot').style.display = 'block'
+
+        // load captcha
+        let response
+        try {
+          response = await fetch(`${window.config.apiUrl}/v1/applicants/sign-up/captcha`)
+        } catch (e) {
+          console.error(e)
+        }
+
+        const data = await response.json()
+        const probe = data.result.probe
+        document.getElementById('captcha-wrapper').innerHTML = data.result.data
+        document.getElementById('captcha-wrapper').style.background = '#ffffff'
+
+        document.getElementById('signup-button-for-real').style.display = 'inline-block'
+
+        document.getElementById('signup-button-for-real').addEventListener('click', async () => {
+          const name = document.getElementById('name-input').value
+          const email = document.getElementById('email-input').value
+          const captchaText = document.getElementById('captcha-input').value
+
+          const response = await fetch(`${window.config.apiUrl}/v1/applicants/sign-up`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              name,
+              email,
+              captcha: {
+                text: captchaText,
+                probe
+              }
+            })
+          })
+
+          if (response.status === 201) {
+            alert('Thank you for signing up! We will get in touch with you soon!')
+          } else if (response.status === 403) {
+            alert('Sorry, something went wrong. Please try again later.')
+          } else if (response.status === 409) {
+            alert('Sorry, you have already signed up. We will get in touch with you soon!')
+          } else {
+            alert('Sorry, something went wrong. Please try again later.')
+          }
+        })
+      })
+    </script>
   </body>
 </html>

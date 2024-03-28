@@ -22,9 +22,10 @@
 :root {
   --color-primary: hsla(35, 87%, 49%, 1);
   --color-secondary: rgb(12, 206, 213);
+  --color-error: hsla(0, 100%, 50%, 1);
   
-	--color-1: rgb(25, 25, 25);
-	--color-2: hsla(39, 93%, 95%, 1);
+  --color-1: rgb(25, 25, 25);
+  --color-2: hsla(39, 93%, 95%, 1);
 
   /* color variations */
 	--color-primary-lightest             : hsla(35, 87%, 96%, 1);
@@ -1139,7 +1140,7 @@ PRELOADER
 	display: none;
 }
 
-#loader {
+.loader {
 	position: relative;
 	width   : 4px;
 	height  : 4px;
@@ -1147,7 +1148,7 @@ PRELOADER
 	display : inline-block;
 }
 
-#loader>div {
+.loader>div {
 	content      : "";
 	background   : var(--color-loader);
 	width        : 4px;
@@ -1158,11 +1159,11 @@ PRELOADER
 	border-radius: 50%;
 }
 
-#loader>div:nth-of-type(1) {
+.loader>div:nth-of-type(1) {
 	left: 15px;
 }
 
-#loader>div:nth-of-type(3) {
+.loader>div:nth-of-type(3) {
 	left: -15px;
 }
 
@@ -1320,6 +1321,20 @@ select:focus {
 input[type=checkbox],
 input[type=radio] {
 	display: inline;
+}
+
+input.error {
+	border-color: var(--color-error);
+}
+
+.error-message {
+	display: none;
+	color  : var(--color-error);
+	margin-bottom: var(--vspace-1);
+}
+
+input.error + .error-message {
+	display: block;
 }
 
 /* ------------------------------------------------------------------- 
