@@ -3073,3 +3073,134 @@ TAG
 .secondary-colored-text, .secondary-colored-text a {
   color: var(--color-secondary);
 }
+
+/* Comic testimonials */
+.comic-testimonials {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1vmin;
+}
+
+.comic-rectangle {
+  background-color: #fff;
+  border: solid 2px #000;
+  box-shadow: 0 6px 6px -6px #000;
+  display: inline-block;
+  flex: 1 1;
+  height: 400px;
+  margin: 1vmin;
+  overflow: hidden;
+  position: relative;
+
+  flex-basis: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  max-width: 600px;
+}
+
+.comic-rectangle-large {
+  max-width: 700px;
+}
+
+@media screen and (max-width: 600px) {
+	.comic-rectangle-large {
+		height: 500px;
+	}
+}
+
+.comic-text {
+  background-color: #fff;
+  border: solid 2px #000;
+  margin: 0;
+  padding: 3px 10px;
+  font-size: smaller;
+}
+
+.top-left {
+  left: -6px;
+  position: absolute;
+  top: -2px;
+  transform: skew(-15deg);
+}
+
+.bottom-right {
+  bottom: -2px;
+  position: absolute;
+  right: -6px;
+  transform: skew(-15deg);
+}
+
+.comic-speech {
+  background-color: #fff;
+  border: solid 2px #000;
+  border-radius: 12px;
+  display: inline-block;
+  margin: .5em;
+  padding: .5em 1em;
+  position: relative;
+
+  margin-left: 25px;
+}
+
+.comic-speech:before {
+  border: solid 12px transparent;
+  border-left: solid 12px #000;
+  border-top: solid 12px #000;
+  bottom: -24px;
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  width: 0;
+}
+
+.comic-speech:after {
+  border: solid 10px transparent;
+  border-left: solid 10px #fff;
+  border-top: solid 10px #fff;
+  bottom: -19px;
+  content: "";
+  height: 0;
+  left: calc(50% + 2px);
+  position: absolute;
+  width: 0;
+}
+
+/*
+.comic-rectangle:nth-child(1) {
+  flex-basis: 400px;
+}
+*/
+
+.comic-rectangle:nth-child(4n+1) {
+  background-image: radial-gradient(circle, rgb(254, 198, 96), var(--color-primary));
+}
+
+.comic-rectangle:nth-child(4n+2) {
+  background-image: radial-gradient(circle, lightblue, rgb(12, 206, 213));
+}
+
+.comic-rectangle:nth-child(4n+3) {
+  background-image: radial-gradient(circle, lightblue, rgb(12, 206, 213));
+}
+
+.comic-rectangle:nth-child(4n+4) {
+  background-image: radial-gradient(circle, rgb(254, 198, 96), var(--color-primary));
+}
+
+.testimonial_img_div {
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial_img {
+  width: 100px;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-bottom: 0;
+  border: 2px solid black;
+  border-radius: 100%;
+}
