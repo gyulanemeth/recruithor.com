@@ -3093,7 +3093,7 @@ TAG
   box-shadow: 0 6px 6px -6px #000;
   display: inline-block;
   flex: 1 1;
-  height: 400px;
+  min-height: 400px;
   margin: 1vmin;
   overflow: hidden;
   position: relative;
@@ -3119,8 +3119,11 @@ TAG
 		margin-bottom: 20px;
 	}
 	.comic-rectangle-large {
-		height: 500px;
+		min-height: 500px;
 	}
+  .comic-text {
+    font-size: small !important;
+  }
 }
 
 .comic-text {
@@ -3155,6 +3158,7 @@ TAG
   position: relative;
 
   margin-left: 25px;
+  margin-top: 50px;
 }
 
 .comic-speech:before {
@@ -3191,6 +3195,11 @@ TAG
   background-image: radial-gradient(circle, lightblue, rgb(12, 206, 213));
 }
 
+.background-dots {
+  background-image: url('../images/background-dots.png');
+  background-size: cover;
+}
+
 .background-zoom {
   background-image: url('../images/zoom.png');
   background-size: cover;
@@ -3199,6 +3208,7 @@ TAG
 .testimonial_img_div {
   display: flex;
   justify-content: center;
+  margin-bottom: 70px;
 }
 
 .testimonial_img {
