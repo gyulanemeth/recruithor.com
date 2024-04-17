@@ -2034,7 +2034,7 @@ TAG
  * responsive:
  * site-header
  * ------------------------------------------------------------------- */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
 	.nav-header {
 		--logo-width: 7rem;
 		top         : var(--vspace-0_25);
@@ -2076,6 +2076,7 @@ TAG
 		position        : absolute;
 		top             : calc(var(--vspace-1_5) * -1);
 		left            : 0;
+    text-align: center;
 	}
 
 	.nav-header__nav a:not(.btn) {
@@ -2103,7 +2104,7 @@ TAG
 	}
 
 	.nav-header__contact .btn {
-		width : 100%;
+		width : 50%;
 		margin: 0;
 	}
 
@@ -2136,6 +2137,11 @@ TAG
 }
 
 @media screen and (max-width: 600px) {
+  .nav-header__contact .btn {
+		width : 100%;
+		margin: 0;
+	}
+  
 	.nav-header__logo {
 		left: calc(var(--gutter) * 2 + 1vw);
 	}
@@ -3123,6 +3129,12 @@ TAG
 	}
   .comic-text {
     font-size: small !important;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1300px) {
+  .comic-rectangle-small {
+    max-width: 700px !important;
   }
 }
 
