@@ -100,9 +100,7 @@
 	--color-btn-stroke-hover       : var(--color-text-dark);
 	--color-btn-stroke-hover-text  : var(--color-white);
 
-	--color-preloader-bg           : var(--color-1-dark);
-	--color-loader                 : var(--color-white);
-	--color-loader-light           : var(--color-1-light);
+  --color-loader                 : var(--color-white);
 
 	--color-body                   : white;
 	--color-border                 : rgba(0, 0, 0, .1);
@@ -1116,31 +1114,6 @@ img,
 	margin-bottom: var(--vspace-1);
 }
 
-
-
-/* 
--------------------------------------------------------------------
-PRELOADER
--------------------------------------------------------------------
-*/
-#preloader {
-	position       : fixed;
-	display        : flex;
-	flex-flow      : row wrap;
-	justify-content: center;
-	align-items    : center;
-	background     : var(--color-preloader-bg);
-	z-index        : 500;
-	height         : 100vh;
-	width          : 100%;
-	opacity        : 1;
-	overflow       : hidden;
-}
-
-.no-js #preloader {
-	display: none;
-}
-
 .loader {
 	position: relative;
 	width   : 4px;
@@ -2035,7 +2008,7 @@ TAG
  * responsive:
  * site-header
  * ------------------------------------------------------------------- */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
 	.nav-header {
 		--logo-width: 7rem;
 		top         : var(--vspace-0_25);
@@ -2077,6 +2050,7 @@ TAG
 		position        : absolute;
 		top             : calc(var(--vspace-1_5) * -1);
 		left            : 0;
+    text-align: center;
 	}
 
 	.nav-header__nav a:not(.btn) {
@@ -2104,7 +2078,7 @@ TAG
 	}
 
 	.nav-header__contact .btn {
-		width : 100%;
+		width : 50%;
 		margin: 0;
 	}
 
@@ -2137,6 +2111,11 @@ TAG
 }
 
 @media screen and (max-width: 600px) {
+  .nav-header__contact .btn {
+		width : 100%;
+		margin: 0;
+	}
+  
 	.nav-header__logo {
 		left: calc(var(--gutter) * 2 + 1vw);
 	}
@@ -3073,4 +3052,156 @@ TAG
 
 .secondary-colored-text, .secondary-colored-text a {
   color: var(--color-secondary);
+}
+
+/* Comic testimonials */
+.comic-testimonials {
+  display: flex;
+  justify-content: center;
+}
+
+.comic-testimonials div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1vmin;
+  max-width: 1300px;
+}
+
+.comic-rectangle {
+  border: solid 2px #000;
+  box-shadow: 0 6px 6px -6px #000;
+  display: inline-block;
+  flex: 1 1;
+  min-height: 400px;
+  margin: 1vmin;
+  overflow: hidden;
+  position: relative;
+
+  flex-basis: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  max-width: 600px !important;
+}
+
+.comic-rectangle-large {
+  max-width: 700px !important;
+}
+
+.comic-rectangle-small {
+  max-width: 500px !important;
+}
+
+@media screen and (max-width: 600px) {
+  .comic-rectangle {
+		margin-bottom: 20px;
+	}
+	.comic-rectangle-large {
+		min-height: 500px;
+	}
+  .comic-text {
+    font-size: small !important;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1300px) {
+  .comic-rectangle-small {
+    max-width: 700px !important;
+  }
+}
+
+.comic-text {
+  background-color: #fff;
+  border: solid 2px #000;
+  margin: 0;
+  padding: 3px 10px;
+  font-size: smaller;
+}
+
+.top-left {
+  left: -6px;
+  position: absolute;
+  top: -2px;
+  transform: skew(-15deg);
+}
+
+.bottom-right {
+  bottom: -2px;
+  position: absolute;
+  right: -6px;
+  transform: skew(-15deg);
+}
+
+.comic-speech {
+  background-color: #fff;
+  border: solid 2px #000;
+  border-radius: 12px;
+  display: inline-block;
+  margin: .5em;
+  padding: .5em 1em;
+  position: relative;
+
+  margin-left: 25px;
+  margin-top: 50px;
+}
+
+.comic-speech:before {
+  border: solid 12px transparent;
+  border-left: solid 12px #000;
+  border-top: solid 12px #000;
+  bottom: -24px;
+  content: "";
+  height: 0;
+  left: 50%;
+  position: absolute;
+  width: 0;
+}
+
+.comic-speech:after {
+  border: solid 10px transparent;
+  border-left: solid 10px #fff;
+  border-top: solid 10px #fff;
+  bottom: -19px;
+  content: "";
+  height: 0;
+  left: calc(50% + 2px);
+  position: absolute;
+  width: 0;
+}
+
+.comic-rectangle {
+  background-color: var(--color-primary);
+  background-image: radial-gradient(circle, rgb(254, 198, 96), var(--color-primary));
+}
+
+.comic-rectangle-secondary {
+  background-color: var(--color-secondary);
+  background-image: radial-gradient(circle, lightblue, rgb(12, 206, 213));
+}
+
+.background-dots {
+  background-image: url('../images/background-dots.png');
+  background-size: cover;
+}
+
+.background-zoom {
+  background-image: url('../images/zoom.png');
+  background-size: cover;
+}
+
+.testimonial_img_div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.testimonial_img {
+  width: 100px;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-bottom: 0;
+  border: 2px solid black;
+  border-radius: 100%;
 }
