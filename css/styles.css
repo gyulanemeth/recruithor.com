@@ -20,15 +20,15 @@
 ------------------------------------------------------------------- 
 */
 :root {
-  --color-primary: hsla(35, 87%, 49%, 1);
-  --color-secondary: rgb(12, 206, 213);
-  --color-error: hsla(0, 100%, 50%, 1);
-  --color-success: hsla(120, 100%, 50%, 1);
-  
-  --color-1: rgb(25, 25, 25);
-  --color-2: hsla(39, 93%, 95%, 1);
+	--color-primary: hsla(35, 87%, 49%, 1);
+	--color-secondary: rgb(12, 206, 213);
+	--color-error: hsla(0, 100%, 50%, 1);
+	--color-success: hsla(120, 100%, 50%, 1);
+	
+	--color-1: rgb(25, 25, 25);
+	--color-2: hsla(39, 93%, 95%, 1);
 
-  /* color variations */
+	/* color variations */
 	--color-primary-lightest             : hsla(35, 87%, 96%, 1);
 	--color-primary-lighter              : hsla(35, 87%, 69%, 1);
 	--color-primary-light                : hsla(35, 87%, 59%, 1);
@@ -36,7 +36,7 @@
 	--color-primary-darker               : hsla(35, 87%, 29%, 1);
 	--color-primary-darkest              : hsla(35, 87%, 10%, 1);
 
-  --color-secondary-lightest             : rgba(192, 241, 242, 0.342);
+	--color-secondary-lightest             : rgba(192, 241, 242, 0.342);
 	--color-secondary-lighter              : rgb(150, 241, 244);
 	--color-secondary-light                : rgb(48, 224, 230);
 	--color-secondary-dark                 : rgb(6, 187, 193);
@@ -91,7 +91,7 @@
 	--color-btn-primary-text       : var(--color-1-dark);
 	--color-btn-primary-hover      : var(--color-primary-light);
 	--color-btn-primary-hover-text : var(--color-1-dark);
-  --color-btn-secondary            : var(--color-secondary);
+	--color-btn-secondary            : var(--color-secondary);
 	--color-btn-secondary-text       : var(--color-1-dark);
 	--color-btn-secondary-hover      : var(--color-secondary-light);
 	--color-btn-secondary-hover-text : var(--color-1-dark);
@@ -100,7 +100,7 @@
 	--color-btn-stroke-hover       : var(--color-text-dark);
 	--color-btn-stroke-hover-text  : var(--color-white);
 
-  --color-loader                 : var(--color-white);
+	--color-loader                 : var(--color-white);
 
 	--color-body                   : white;
 	--color-border                 : rgba(0, 0, 0, .1);
@@ -1424,9 +1424,9 @@ input[type=button].btn--primary:hover {
  input[type=submit].btn--secondary,
  input[type=reset].btn--secondary,
  input[type=button].btn--secondary {
-   background  : var(--color-btn-secondary);
-   border-color: var(--color-btn-secondary);
-   color       : var(--color-btn-secondary-text);
+	 background  : var(--color-btn-secondary);
+	 border-color: var(--color-btn-secondary);
+	 color       : var(--color-btn-secondary-text);
  }
  
  .btn.btn--primasecondaryry:focus,
@@ -1439,9 +1439,9 @@ input[type=button].btn--primary:hover {
  input[type=submit].btn--secondary:hover,
  input[type=reset].btn--secondary:hover,
  input[type=button].btn--secondary:hover {
-   background  : var(--color-btn-secondary-hover);
-   border-color: var(--color-btn-secondary-hover);
-   color       : var(--color-btn-secondary-hover-text);
+	 background  : var(--color-btn-secondary-hover);
+	 border-color: var(--color-btn-secondary-hover);
+	 color       : var(--color-btn-secondary-hover-text);
  }
 
 .btn.u-fullwidth,
@@ -1601,8 +1601,8 @@ TAG
 .testimonials {
 	margin-top: var(--vspace-3);
 	position  : relative;
-  padding-left: 10%;
-  padding-right: 10%;
+	padding-left: 10%;
+	padding-right: 10%;
 }
 
 .testimonials__div {
@@ -1830,13 +1830,13 @@ TAG
 	--header-height: 80px;
 	--logo-width   : 6rem;
 	--box-shadow   : 0 1px 1px rgba(0, 0, 0, 0.02),
-		             0 2px 2px rgba(0, 0, 0, 0.02),
-		             0 4px 4px rgba(0, 0, 0, 0.02),
-		             0 8px 8px rgba(0, 0, 0, 0.02);
+								 0 2px 2px rgba(0, 0, 0, 0.02),
+								 0 4px 4px rgba(0, 0, 0, 0.02),
+								 0 8px 8px rgba(0, 0, 0, 0.02);
 	--box-shadow-2:  0 2px 2px rgba(0, 0, 0, 0.03),
-		             0 4px 4px rgba(0, 0, 0, 0.03),
-		             0 8px 8px rgba(0, 0, 0, 0.03),
-		              16px 16px rgba(0, 0, 0, 0.03);
+								 0 4px 4px rgba(0, 0, 0, 0.03),
+								 0 8px 8px rgba(0, 0, 0, 0.03),
+									16px 16px rgba(0, 0, 0, 0.03);
 	z-index         : 100;
 	background-color: transparent;
 	height          : var(--header-height);
@@ -1871,8 +1871,8 @@ TAG
 	padding: 0;
 	outline: 0;
 	border : none;
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .nav-header__logo img {
@@ -2050,7 +2050,7 @@ TAG
 		position        : absolute;
 		top             : calc(var(--vspace-1_5) * -1);
 		left            : 0;
-    text-align: center;
+		text-align: center;
 	}
 
 	.nav-header__nav a:not(.btn) {
@@ -2111,11 +2111,11 @@ TAG
 }
 
 @media screen and (max-width: 600px) {
-  .nav-header__contact .btn {
+	.nav-header__contact .btn {
 		width : 100%;
 		margin: 0;
 	}
-  
+	
 	.nav-header__logo {
 		left: calc(var(--gutter) * 2 + 1vw);
 	}
@@ -2355,12 +2355,12 @@ TAG
 }
 
 .section-intro__scroll-down .scroll-icon:hover {
-  transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 	border         : 1px solid var(--color-secondary);
 }
 
 .section-intro__scroll-down .scroll-icon-primary:hover {
-  transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 	border         : 1px solid var(--color-primary);
 }
 
@@ -2686,8 +2686,8 @@ TAG
 }
 
 .companies-list__more-btn-div {
-  margin-top: 50px;
-  text-align: center;
+	margin-top: 50px;
+	text-align: center;
 }
 /* ------------------------------------------------------------------- 
  * responsive:
@@ -2860,7 +2860,7 @@ TAG
  * ------------------------------------------------------------------- */
 .ss-copyright {
 	margin: 0 var(--vspace-2) 0 0;
-  color: var(--color-gray-5);
+	color: var(--color-gray-5);
 }
 
 .ss-copyright a {
@@ -3003,7 +3003,7 @@ TAG
 /* PLUS */
 .logo-text {
 	font-family: var(--font-2);
-  letter-spacing: 1.5px !important;
+	letter-spacing: 1.5px !important;
 }
 
 .white-text {
@@ -3019,191 +3019,191 @@ TAG
 }
 
 .text-bold {
-  font-weight: bold;
+	font-weight: bold;
 }
 
 .text-center {
-  text-align: center;
+	text-align: center;
 }
 
 .text-italic {
-  font-style: italic;
+	font-style: italic;
 }
 
 .testimonial__div {
-  margin-bottom: 25px;
+	margin-bottom: 25px;
 }
 
 .mb-0 {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 .hover-primary a:hover {
-  color: var(--color-primary);
+	color: var(--color-primary);
 }
 
 .hover-secondary a:hover {
-  color: var(--color-secondary);
+	color: var(--color-secondary);
 }
 
 .primary-colored-text, .primary-colored-text a {
-  color: var(--color-primary);
+	color: var(--color-primary);
 }
 
 .secondary-colored-text, .secondary-colored-text a {
-  color: var(--color-secondary);
+	color: var(--color-secondary);
 }
 
 /* Comic testimonials */
 .comic-testimonials {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .comic-testimonials div {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 1vmin;
-  max-width: 1300px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 1vmin;
+	max-width: 1300px;
 }
 
 .comic-rectangle {
-  border: solid 2px #000;
-  box-shadow: 0 6px 6px -6px #000;
-  display: inline-block;
-  flex: 1 1;
-  min-height: 400px;
-  margin: 1vmin;
-  overflow: hidden;
-  position: relative;
+	border: solid 2px #000;
+	box-shadow: 0 6px 6px -6px #000;
+	display: inline-block;
+	flex: 1 1;
+	min-height: 400px;
+	margin: 1vmin;
+	overflow: hidden;
+	position: relative;
 
-  flex-basis: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	flex-basis: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 
-  max-width: 600px !important;
+	max-width: 600px !important;
 }
 
 .comic-rectangle-large {
-  max-width: 700px !important;
+	max-width: 700px !important;
 }
 
 .comic-rectangle-small {
-  max-width: 500px !important;
+	max-width: 500px !important;
 }
 
 @media screen and (max-width: 600px) {
-  .comic-rectangle {
+	.comic-rectangle {
 		margin-bottom: 20px;
 	}
 	.comic-rectangle-large {
 		min-height: 500px;
 	}
-  .comic-text {
-    font-size: small !important;
-  }
+	.comic-text {
+		font-size: small !important;
+	}
 }
 
 @media screen and (min-width: 601px) and (max-width: 1300px) {
-  .comic-rectangle-small {
-    max-width: 700px !important;
-  }
+	.comic-rectangle-small {
+		max-width: 700px !important;
+	}
 }
 
 .comic-text {
-  background-color: #fff;
-  border: solid 2px #000;
-  margin: 0;
-  padding: 3px 10px;
-  font-size: smaller;
+	background-color: #fff;
+	border: solid 2px #000;
+	margin: 0;
+	padding: 3px 10px;
+	font-size: smaller;
 }
 
 .top-left {
-  left: -6px;
-  position: absolute;
-  top: -2px;
-  transform: skew(-15deg);
+	left: -6px;
+	position: absolute;
+	top: -2px;
+	transform: skew(-15deg);
 }
 
 .bottom-right {
-  bottom: -2px;
-  position: absolute;
-  right: -6px;
-  transform: skew(-15deg);
+	bottom: -2px;
+	position: absolute;
+	right: -6px;
+	transform: skew(-15deg);
 }
 
 .comic-speech {
-  background-color: #fff;
-  border: solid 2px #000;
-  border-radius: 12px;
-  display: inline-block;
-  margin: .5em;
-  padding: .5em 1em;
-  position: relative;
+	background-color: #fff;
+	border: solid 2px #000;
+	border-radius: 12px;
+	display: inline-block;
+	margin: .5em;
+	padding: .5em 1em;
+	position: relative;
 
-  margin-left: 25px;
-  margin-top: 50px;
+	margin-left: 25px;
+	margin-top: 50px;
 }
 
 .comic-speech:before {
-  border: solid 12px transparent;
-  border-left: solid 12px #000;
-  border-top: solid 12px #000;
-  bottom: -24px;
-  content: "";
-  height: 0;
-  left: 50%;
-  position: absolute;
-  width: 0;
+	border: solid 12px transparent;
+	border-left: solid 12px #000;
+	border-top: solid 12px #000;
+	bottom: -24px;
+	content: "";
+	height: 0;
+	left: 50%;
+	position: absolute;
+	width: 0;
 }
 
 .comic-speech:after {
-  border: solid 10px transparent;
-  border-left: solid 10px #fff;
-  border-top: solid 10px #fff;
-  bottom: -19px;
-  content: "";
-  height: 0;
-  left: calc(50% + 2px);
-  position: absolute;
-  width: 0;
+	border: solid 10px transparent;
+	border-left: solid 10px #fff;
+	border-top: solid 10px #fff;
+	bottom: -19px;
+	content: "";
+	height: 0;
+	left: calc(50% + 2px);
+	position: absolute;
+	width: 0;
 }
 
 .comic-rectangle {
-  background-color: var(--color-primary);
-  background-image: radial-gradient(circle, rgb(254, 198, 96), var(--color-primary));
+	background-color: var(--color-primary);
+	background-image: radial-gradient(circle, rgb(254, 198, 96), var(--color-primary));
 }
 
 .comic-rectangle-secondary {
-  background-color: var(--color-secondary);
-  background-image: radial-gradient(circle, lightblue, rgb(12, 206, 213));
+	background-color: var(--color-secondary);
+	background-image: radial-gradient(circle, lightblue, rgb(12, 206, 213));
 }
 
 .background-dots {
-  background-image: url('../images/background-dots.png');
-  background-size: cover;
+	background-image: url('../images/background-dots.png');
+	background-size: cover;
 }
 
 .background-zoom {
-  background-image: url('../images/zoom.png');
-  background-size: cover;
+	background-image: url('../images/zoom.png');
+	background-size: cover;
 }
 
 .testimonial_img_div {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 70px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 70px;
 }
 
 .testimonial_img {
-  width: 100px;
-  margin-top: 20px;
-  margin-left: 15px;
-  margin-bottom: 0;
-  border: 2px solid black;
-  border-radius: 100%;
+	width: 100px;
+	margin-top: 20px;
+	margin-left: 15px;
+	margin-bottom: 0;
+	border: 2px solid black;
+	border-radius: 100%;
 }
 
 
@@ -3211,15 +3211,15 @@ TAG
  * ## email verification
  * -------------------------------------------------------------------- */
  .section-email-verification__content {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 	align-items   : center;
-  text-align: center;
+	text-align: center;
 	height        : 100vh;
 	color         : var(--color-2);
 	padding-top   : var(--content-padding-top);
 	padding-bottom: var(--content-padding-bottom);
-  padding-left: 10px;
-  padding-right: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 	position      : relative;
 }
