@@ -86,6 +86,14 @@
             <h3>Follow us</h3>
             <div class="primary-colored-text hover-secondary">
               <ul class="section-footer__social social-list">
+                <!--
+                <li>
+                  <a href="#0">
+                    <img src="//images/icons/twitter.svg" class="mb-0">
+                    <span class="u-screen-reader-text">Twitter</span>
+                  </a>
+                </li>
+                -->
                 <li>
                   <a href="https://www.linkedin.com/company/recruithorx/" target="_blank">
                     <img src="/images/icons/linkedIn.svg" class="mb-0">
@@ -97,7 +105,7 @@
           </div>
           <div class="column xl-4 lg-4 md-12 tab-12 section-footer__block section-footer__newsletter">
             <h3>Contact us</h3>
-            <div class="primary-colored-text hover-secondary">
+            <div class="secondary-colored-text hover-primary">
               <a href="mailto:info@recruithor.com">info@recruithor.com</a>
             </div>
           </div>
@@ -147,7 +155,7 @@
 
         let response
         try {
-          response = await fetch(`${window.config.apiUrl}/v1/applicants/verify-email`, {
+          response = await fetch(`${window.config.apiUrl}/v1/companies/verify-email`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
