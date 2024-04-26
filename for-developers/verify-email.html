@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Recruithor</title>
+
+    <script>
+      document.documentElement.classList.remove('no-js')
+      document.documentElement.classList.add('js')
+    </script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <!-- favicons  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
+  </head>
+
+  <body id="top">
+    <div class="page-wrapper homepage">
+      <header class="nav-header">
+        <div class="row nav-header__inner width-sixteen-col">
+          <div class="nav-header__block">
+            <div class="nav-header__logo">
+              <a class="logo" href="/">
+                <img src="/images/logo.png" alt="Logo" />
+                <span class="logo-text white-text ml-12">Recruithor</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section id="content">
+        <section id="intro" class="section-intro">
+          <div class="section-email-verification__content">
+            <div id="loader-dots" class="loader dots-fade">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div id="verification-success" style="display: none">
+              <img
+                src="/images/thor_thumbs_up.webp"
+                srcset="/images/thor_thumbs_up.webp 1x, /images/thor_thumbs_up.webp 2x"
+                alt=""
+                class="mb-0"
+                style="max-height: 50vh"
+              />
+              <h3 class="white-text">
+                Email successfully confirmed!
+              </h3>
+              We will contact you by email soon!
+            </div>
+            <div id="verification-fail" style="display: none">
+              <img
+                src="/images/thor_thumbs_down.webp"
+                srcset="/images/thor_thumbs_down.webp 1x, /images/thor_thumbs_down.webp 2x"
+                alt=""
+                class="mb-0"
+                style="max-height: 50vh"
+              />
+              <h3 class="white-text">
+                Failed to confirm email address
+              </h3>
+              Try again!
+            </div>
+          </div>
+        </section>
+
+      <!-- Footer -->
+      <footer class="section-footer">
+        <div class="row section-footer__content">
+          <div class="column xl-4 lg-4 md-12 section-footer__block section-footer__site-links">
+            <h3>Site Links</h3>
+            <ul class="link-list">
+              <li><a href="/">Home</a></li>
+              <li><a href="/for-developers/">For developers</a></li>
+              <li><a href="/for-employers/">For employers</a></li>
+            </ul>
+          </div>
+          <div class="column xl-4 lg-4 md-12 section-footer__block section-footer__about">
+            <h3>Follow us</h3>
+            <div class="primary-colored-text hover-secondary">
+              <ul class="section-footer__social social-list">
+                <li>
+                  <a href="https://www.linkedin.com/company/recruithorx/" target="_blank">
+                    <img src="/images/icons/linkedIn.svg" class="mb-0">
+                    <span class="u-screen-reader-text">LinkedIn</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="column xl-4 lg-4 md-12 tab-12 section-footer__block section-footer__newsletter">
+            <h3>Contact us</h3>
+            <div class="primary-colored-text hover-secondary">
+              <a href="mailto:info@recruithor.com">info@recruithor.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row section-footer__bottom">
+          <div class="column xl-12 lg-12">
+            <p class="ss-copyright" style="text-align: center;">
+              <span>All rights reserved © 2024-present GYN Technologies OÜ</span>
+            </p>
+          </div>
+
+          <div class="ss-go-top ss-go-top-secondary">
+            <a class="smoothscroll" title="Back to Top" href="#top">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="36"
+                height="36"
+                fill="none"
+                stroke="#ffffff"
+                stroke-width="1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                &lt;!--! Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/
+                (Icons: CC BY 4.0) Copyright 2021 Atomicons --&gt;
+                <polyline points="17 11 12 6 7 11"></polyline>
+                <line x1="12" y1="18" x2="12" y2="6"></line>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="/js/main.js"></script>
+    <script src="/config.js"></script>
+
+    <script>
+      window.addEventListener('load', async function() {
+        const urlParams = new URLSearchParams(window.location.search)
+        const emailVerificationToken = urlParams.get('emailVerificationToken')
+
+        if (!emailVerificationToken) {
+          return
+        }
+
+        let response
+        try {
+          response = await fetch(`${window.config.apiUrl}/v1/applicants/verify-email`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              emailVerificationToken
+            })
+          })
+        } catch (e) {
+          document.getElementById('verification-fail').style.display = 'block'
+        }
+
+        // const data = await response.json()
+
+        document.getElementById('loader-dots').style.display = 'none'
+
+        if (response.status === 200) {
+          document.getElementById('verification-success').style.display = 'block'
+        } else {
+          document.getElementById('verification-fail').style.display = 'block'
+        }
+      })
+    </script>
+  </body>
+</html>

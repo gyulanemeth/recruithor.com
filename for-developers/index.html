@@ -339,13 +339,11 @@
                   Stop waste your energy on boring companies. Go through our exciting selection process and let us find interesting companies for you.
                 </p>
 
-                <p>If you are interested finding a job with us, please write us a few line about "Why you love-hate Javascript", and we will get in touch with you soon!</p>
-
-                <a class="btn btn--primary text-bold" href="mailto:info@recruithor.com?subject=Why%20I%20love-hate%20Javascript.">Count me in!</a>
-
-
-
                 <!--
+                  <p>If you are interested finding a job with us, please write us a few line about "Why you love-hate Javascript", and we will get in touch with you soon!</p>
+
+                  <a class="btn btn--primary text-bold" href="mailto:info@recruithor.com?subject=Why%20I%20love-hate%20Javascript.">Count me in!</a>
+                -->
                 <form>
                   <div>
                     <input id="name-input" class="u-fullwidth" type="text" placeholder="Your Name" />
@@ -371,11 +369,10 @@
                       </div>
                     </div>
                     <input id="captcha-input" class="u-fullwidth" type="text" placeholder="Enter captcha" />
-                    <div id="captcha-error" class="error-message" style="display: none;">Sorry, we don't accept applications from robots (yet)!</div>
                   </div>
                   <button id="signup-button-for-real" type="button" class="btn--primary text-bold" style="width: 50%; display: none;">I'm not a robot! Promise!</button>
+                  <div id="final-response"></div>
                 </form>
-                -->
               </div>
             </div>
           </div>
@@ -538,15 +535,27 @@
             })
           })
 
+          const data = await response.json()
+
+          const finalResponseDiv = document.getElementById('final-response')
+          finalResponseDiv.style.display = 'block'
+
           if (response.status === 201) {
-            alert('Thank you for signing up! We will get in touch with you soon!')
+            finalResponseDiv.innerHTML = 'Thank you for signing up! We will get in touch with you soon!'
+            finalResponseDiv.style.color = 'var(--color-success)'
           } else if (response.status === 403) {
-            alert('Sorry, something went wrong. Please try again later.')
+            finalResponseDiv.innerHTML = 'It seems you are a robot. We don\'t accept applications from robots (yet)! If you are not a robot, refresh the page, and start again!'
+            finalResponseDiv.style.color = 'var(--color-error)'
           } else if (response.status === 409) {
-            alert('Sorry, you have already signed up. We will get in touch with you soon!')
+            finalResponseDiv.innerHTML = 'You have already signed up! We will get in touch with you soon!'
+            finalResponseDiv.style.color = 'var(--color-primary)'
           } else {
-            alert('Sorry, something went wrong. Please try again later.')
+            finalResponseDiv.innerHTML = 'Sorry, something went wrong. Please try again later.'
+            finalResponseDiv.style.color = 'var(--color-error)'
           }
+
+          document.getElementById('not-a-robot').style.display = 'none'
+          document.getElementById('signup-button-for-real').style.display = 'none'
         })
       })
     </script>
